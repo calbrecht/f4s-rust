@@ -25,7 +25,7 @@
 
         # https://rust-lang.github.io/rustup-components-history/
         rustNightly = (prev.rustNightly or { }) //
-        final.nixpkgs-mozilla.rustChannelOf {
+        (import inputs.nixpkgs-mozilla final prev).rustChannelOf {
           sha256 = "sha256-9wp6afVeZqCOEgXxYQiryYeF07kW5IHh3fQaOKF2oRI=";
           date = "2021-01-01";
           channel = "nightly";
