@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs-mozilla = {
-      url = github:mozilla/nixpkgs-mozilla;
+      url = github:andersk/nixpkgs-mozilla/stdenv.lib;
       flake = false;
     };
   };

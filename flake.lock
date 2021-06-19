@@ -16,15 +16,16 @@
     "nixpkgs-mozilla": {
       "flake": false,
       "locked": {
-        "lastModified": 1622726979,
-        "narHash": "sha256-JCBPZVQ4aGe3cmnQc1tjJRwaxqz1b60piQz+/F9CMtc=",
-        "owner": "mozilla",
+        "lastModified": 1612892239,
+        "narHash": "sha256-jwrdJvaDl+kCRH3LFYuL9KweXO7fCTXxLovKja6xqbk=",
+        "owner": "andersk",
         "repo": "nixpkgs-mozilla",
-        "rev": "3f3fba4e2066f28a1ad7ac60e86a688a92eb5b5f",
+        "rev": "3499e085fb6ae1a846bcf425fa9c98a3b77480da",
         "type": "github"
       },
       "original": {
-        "owner": "mozilla",
+        "owner": "andersk",
+        "ref": "stdenv.lib",
         "repo": "nixpkgs-mozilla",
         "type": "github"
       }
