@@ -2,10 +2,10 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1636152070,
-        "narHash": "sha256-ePb8tZBzyG/zbaJ6VW5sKXX38ZATcplyDRu/dhQg3zM=",
-        "path": "/nix/store/kxnsdgbng1bxicrblc46nhzvyqmhzipv-source",
-        "rev": "48fe29f748ad2e80356f1e917fdcd93ba78d2455",
+        "lastModified": 1636653979,
+        "narHash": "sha256-Pl19x9+tbjkEsQ/YKLRbGxRpsLrrCZSCpjqaAAQ5WAA=",
+        "path": "/nix/store/pm8s82vvvmn345775i0s816grn2llg8l-source",
+        "rev": "5259293c102a416ec34776732d980c44c4e5fd91",
         "type": "path"
       },
       "original": {
@@ -16,11 +16,11 @@
     "nixpkgs-mozilla": {
       "flake": false,
       "locked": {
-        "lastModified": 1636047415,
+        "lastModified": 1636569584,
         "narHash": "sha256-iDFogua24bhFJZSxG/jhZbbNxDXuKP9S/pyRIYzrRPM=",
         "owner": "mozilla",
         "repo": "nixpkgs-mozilla",
-        "rev": "cf58c4c67b15b402e77a2665b9e7bad3e9293cb2",
+        "rev": "9f70f86d73fa97e043bebeb58e5676d157069cfb",
         "type": "github"
       },
       "original": {
