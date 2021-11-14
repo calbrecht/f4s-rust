@@ -14,26 +14,34 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          (import (inputs.nixpkgs-mozilla + /rust-overlay.nix))
           self.overlay
         ];
       };
     in
     {
-      defaultPackage."${system}" = pkgs.rustNightly.rust;
+      defaultPackage."${system}" = pkgs.rust-nightly;
 
       overlay = final: prev: {
+        rustChannelOf = (import inputs.nixpkgs-mozilla final prev).rustChannelOf;
+
         # https://rust-lang.github.io/rustup-components-history/
         rustNightly = (prev.rustNightly or { })
-        // (prev.rustChannelOf or pkgs.rustChannelOf) {
+        // (prev.rustChannelOf or final.rustChannelOf) {
+          #sha256 = pkgs.lib.fakeSha256;
+          #date = "";
+          sha256 = "sha256-O2UIx0rQIrFt3eg+1G0OmQWSJJ2cqRhSsmvEsSVeBMs=";
+          date = "2021-11-14";
+          #sha256 = "sha256-k5/+9zafsA2ds0i2Nt7Oib7OBJihSVRoNe84LJkG/ic=";
+          #date = "2021-10-14";
+          #sha256 = "sha256-CU7J0ynkVTUuJ93IszuCHrDMaivAq3jZbDMfgjBLOBA=";
+          #date = "2021-08-04";
           #sha256 = "sha256-9wp6afVeZqCOEgXxYQiryYeF07kW5IHh3fQaOKF2oRI=";
-          sha256 = "sha256-CU7J0ynkVTUuJ93IszuCHrDMaivAq3jZbDMfgjBLOBA=";
-          date = "2021-08-04";
           #date = "2021-01-01";
           channel = "nightly";
-          #sha256 = "sha256-0BuV+blSz4OrplGvWKmeTq6fDlFPLJ3rZWkO5+HSAHM=";
-          #date = "2020-10-17";
         };
+
+        rust-nightly = final.rustNightly.rust;
+        rust-src-nightly = final.rustNightly.rust-src;
       };
     };
 }
