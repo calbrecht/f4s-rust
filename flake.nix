@@ -14,6 +14,7 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
+          (import inputs.nixpkgs-mozilla)
           self.overlay
         ];
       };
@@ -22,11 +23,9 @@
       defaultPackage."${system}" = pkgs.rust-nightly;
 
       overlay = final: prev: {
-        rustChannelOf = (import inputs.nixpkgs-mozilla final prev).rustChannelOf;
-
         # https://rust-lang.github.io/rustup-components-history/
         rustNightly = (prev.rustNightly or { })
-        // (prev.rustChannelOf or final.rustChannelOf) {
+        // (prev.rustChannelOf or pkgs.rustChannelOf) {
           #sha256 = pkgs.lib.fakeSha256;
           #date = "";
           sha256 = "sha256-O2UIx0rQIrFt3eg+1G0OmQWSJJ2cqRhSsmvEsSVeBMs=";
