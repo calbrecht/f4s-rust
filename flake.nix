@@ -21,6 +21,9 @@
     in
     {
       defaultPackage."${system}" = pkgs.rust-nightly;
+      legacyPackages."${system}" = {
+        rust-stable = pkgs.rust-stable;
+      };
 
       overlay = final: prev: {
         # https://rust-lang.github.io/rustup-components-history/
@@ -28,8 +31,12 @@
         // (prev.rustChannelOf or pkgs.rustChannelOf) {
           #sha256 = pkgs.lib.fakeSha256;
           #date = "";
-          sha256 = "sha256-O2UIx0rQIrFt3eg+1G0OmQWSJJ2cqRhSsmvEsSVeBMs=";
-          date = "2021-11-14";
+          #sha256 = "sha256-z+elrzVPDgtdqSMg8NTSGqkmfsK6vOn9XUFXcsSXhXo=";
+          #date = "2022-04-07";
+          sha256 = "sha256-hZMoBt9dPsFEVzpOyLosxuAeA/KLfDPt0nwGQigwM9w=";
+          date = "2022-01-14";
+          #sha256 = "sha256-O2UIx0rQIrFt3eg+1G0OmQWSJJ2cqRhSsmvEsSVeBMs=";
+          #date = "2021-11-14";
           #sha256 = "sha256-k5/+9zafsA2ds0i2Nt7Oib7OBJihSVRoNe84LJkG/ic=";
           #date = "2021-10-14";
           #sha256 = "sha256-CU7J0ynkVTUuJ93IszuCHrDMaivAq3jZbDMfgjBLOBA=";
@@ -37,10 +44,23 @@
           #sha256 = "sha256-9wp6afVeZqCOEgXxYQiryYeF07kW5IHh3fQaOKF2oRI=";
           #date = "2021-01-01";
           channel = "nightly";
+          #sha256 = pkgs.lib.fakeSha256;
+          #date = "2022-04-22";
+          #channel = "stable";
+        };
+
+        rustStable = (prev.rustStable or { })
+        // (prev.rustChannelOf or pkgs.rustChannelOf) {
+          sha256 = "sha256-otgm+7nEl94JG/B+TYhWseZsHV1voGcBsW/lOD2/68g=";
+          #date = "2022-04-22";
+          channel = "stable";
         };
 
         rust-nightly = final.rustNightly.rust;
         rust-src-nightly = final.rustNightly.rust-src;
+
+        rust-stable = final.rustStable.rust;
+        rust-src-stable = final.rustStable.rust-src;
       };
     };
 }
