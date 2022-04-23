@@ -23,6 +23,7 @@
       defaultPackage."${system}" = pkgs.rust-nightly;
       legacyPackages."${system}" = {
         rust-stable = pkgs.rust-stable;
+        rust-src-stable = pkgs.rust-src-stable;
       };
 
       overlay = final: prev: {
@@ -59,7 +60,7 @@
         rust-nightly = final.rustNightly.rust;
         rust-src-nightly = final.rustNightly.rust-src;
 
-        rust-stable = final.rustStable.rust;
+        rust-stable = final.rustStable.rust // final.rust-analyzer;
         rust-src-stable = final.rustStable.rust-src;
       };
     };
