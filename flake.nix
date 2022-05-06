@@ -1,6 +1,10 @@
 {
   description = "Mozilla rust overlay flake";
 
+  nixConfig = {
+    flake-registry = https://github.com/calbrecht/f4s-registry/raw/main/flake-registry.json;
+  };
+
   inputs = {
     nixpkgs-mozilla = {
       url = github:mozilla/nixpkgs-mozilla;
