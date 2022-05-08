@@ -6,6 +6,7 @@
   };
 
   inputs = {
+    nixpkgs.url = flake:f4s-nixpkgs;
     nixpkgs-mozilla = {
       url = github:mozilla/nixpkgs-mozilla;
       flake = false;
