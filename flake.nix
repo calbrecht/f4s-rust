@@ -7,7 +7,7 @@
 
   inputs = {
     nixpkgs-mozilla = {
-      url = github:mozilla/nixpkgs-mozilla;
+      url = github:mozilla/nixpkgs-mozilla/d51794793e6dede2a17431b93039328552ebba0c;
       flake = false;
     };
   };
