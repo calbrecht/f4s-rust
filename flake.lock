@@ -17,17 +17,17 @@
     "nixpkgs-mozilla": {
       "flake": false,
       "locked": {
-        "lastModified": 1675428002,
-        "narHash": "sha256-A1gO8zlWLv3+tZ3cGVB1WYvvoN9pbFyv0xIJHcTsckw=",
-        "owner": "mozilla",
+        "lastModified": 1675517790,
+        "narHash": "sha256-vTcHoA0ApWib1NLCvBEoyy5pRYDaRDdojR0Fs9Nupl4=",
+        "owner": "calbrecht",
         "repo": "nixpkgs-mozilla",
-        "rev": "d51794793e6dede2a17431b93039328552ebba0c",
+        "rev": "642c846fa3ed20ee04d717e8bbd6176f038588c0",
         "type": "github"
       },
       "original": {
-        "owner": "mozilla",
+        "owner": "calbrecht",
+        "ref": "tmpfix",
         "repo": "nixpkgs-mozilla",
-        "rev": "d51794793e6dede2a17431b93039328552ebba0c",
         "type": "github"
       }
     },
