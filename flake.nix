@@ -27,6 +27,7 @@
       defaultPackage."${system}" = pkgs.rust-stable;
       legacyPackages."${system}" = {
         rust-nightly = pkgs.rust-nightly;
+        rust-src-nightly = pkgs.rust-src-nightly;
         rust-stable = pkgs.rust-stable;
         rust-src-stable = pkgs.rust-src-stable;
       };
