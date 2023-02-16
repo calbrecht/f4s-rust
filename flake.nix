@@ -60,7 +60,8 @@
 
         rustStable = (prev.rustStable or { })
         // (prev.rustChannelOf or pkgs.rustChannelOf) {
-          sha256 = "sha256-oro0HsosbLRAuZx68xd0zfgPl6efNj2AQruKRq3KA2g="; #2022-05-24
+          sha256 = "sha256-S4dA7ne2IpFHG+EnjXfogmqwGyDFSRWFnJ8cy4KZr1k="; #2023-02-16
+          #sha256 = "sha256-oro0HsosbLRAuZx68xd0zfgPl6efNj2AQruKRq3KA2g="; #2022-05-24
           #sha256 = "sha256-otgm+7nEl94JG/B+TYhWseZsHV1voGcBsW/lOD2/68g="; #2022-04-22
           channel = "stable";
         };
