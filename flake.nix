@@ -6,10 +6,7 @@
   };
 
   inputs = {
-    nixpkgs-mozilla = {
-      url = github:calbrecht/nixpkgs-mozilla/tmpfix;
-      flake = false;
-    };
+    nixpkgs-mozilla.url = github:calbrecht/nixpkgs-mozilla/fix-build-rust-src;
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -18,7 +15,7 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          (import inputs.nixpkgs-mozilla)
+          inputs.nixpkgs-mozilla.overlays.rust
           self.overlay
         ];
       };
@@ -60,7 +57,8 @@
 
         rustStable = (prev.rustStable or { })
         // (prev.rustChannelOf or pkgs.rustChannelOf) {
-          sha256 = "sha256-gdYqng0y9iHYzYPAdkC/ka3DRny3La/S5G8ASj0Ayyc="; #2023-06-10
+          sha256 = "sha256-ks0nMEGGXKrHnfv4Fku+vhQ7gx76ruv6Ij4fKZR3l78="; #2023-07-27
+          #sha256 = "sha256-gdYqng0y9iHYzYPAdkC/ka3DRny3La/S5G8ASj0Ayyc="; #2023-06-10
           #sha256 = "sha256-eMJethw5ZLrJHmoN2/l0bIyQjoTX1NsvalWSscTixpI="; #2023-04-29
           #sha256 = "sha256-4vetmUhTUsew5FODnjlnQYInzyLNyDwocGa4IvMk3DM="; #2023-03-13
           #sha256 = "sha256-JvgrOEGMM0N+6Vsws8nUq0W/PJPxkf5suZjgEtAzG6I="; #2023-03-13
@@ -73,7 +71,7 @@
         rust-nightly = final.rustNightly.rust;
         rust-src-nightly = final.rustNightly.rust-src;
 
-        rust-stable = final.rustStable.rust // final.rust-analyzer;
+        rust-stable = final.rustStable.rust;
         rust-src-stable = final.rustStable.rust-src;
       };
     };
