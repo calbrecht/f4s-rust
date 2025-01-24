@@ -6,7 +6,7 @@
   };
 
   inputs = {
-    nixpkgs-mozilla.url = "github:calbrecht/nixpkgs-mozilla/fix-build-rust-src";
+    nixpkgs-mozilla.url = "github:mozilla/nixpkgs-mozilla";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
